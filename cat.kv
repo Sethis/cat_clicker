@@ -1,0 +1,78 @@
+#:kivy 1.0.9
+#:import utils kivy.utils
+
+<CatIcon>:
+    Label:
+        text: str(root.money)
+        font_size: 70
+        x: app.width / 2.5 + 25
+        y: app.height / 4 + 400
+
+    Button:
+        background_normal: 'cat_standart.jpg'
+        background_down: 'cat_pressed.jpg'
+        size: 400, 400
+        x: app.width / 4
+        y: app.height / 4
+        pos_hint: {"x":0.35, "y":0.3}
+        on_press: root.add_money()
+
+
+    Label:
+        text: "Энергия: " + str(root.energy)
+        font_size: 35
+        x: 100
+        y: app.height - 100
+
+
+    Button:
+        background_normal: 'sleep_standart.png'
+        background_down: 'sleep_pressed.png'
+        size: 200, 100
+        x: 50
+        y: app.height - 175
+        on_press: root.add_energy()
+
+
+
+    Label:
+        text: "Счастье: " + str(root.happy)
+        font_size: 35
+        x: 375
+        y: app.height - 100
+
+
+    Button:
+        background_normal: 'happy_standart.png'
+        background_down: 'happy_pressed.png'
+        size: 200, 100
+        x: 330
+        y: app.height - 175
+        on_press: root.add_happy()
+
+    Label:
+        text: "Голод: " + str(root.food)
+        font_size: 35
+        x: 625
+        y: app.height - 100
+
+
+    Button:
+        background_normal: 'eat_standart.png'
+        background_down: 'eat_pressed.png'
+        size: 200, 100
+        x: 580
+        y: app.height - 175
+        on_press: root.add_eat()
+
+
+<CatGame>:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex('#3f47cc')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    CatIcon:
+
